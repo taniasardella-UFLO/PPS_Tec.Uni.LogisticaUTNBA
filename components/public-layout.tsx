@@ -1,33 +1,51 @@
 import Link from "next/link";
-import { FileText, LogIn } from "lucide-react";
+import { BriefcaseBusiness, Building2, CircleHelp, Home, LogIn } from "lucide-react";
+import { UtnLogo } from "@/components/utn-brand";
 
 const publicLinks = [
-  { href: "/como-funciona", label: "Cómo funciona" },
-  { href: "/requisitos", label: "Requisitos" },
-  { href: "/login", label: "Ingresar" },
+  { href: "/", label: "Inicio", icon: Home },
+  { href: "/como-funciona", label: "Proceso", icon: BriefcaseBusiness },
+  { href: "/requisitos", label: "Requisitos", icon: Building2 },
+  { href: "/login", label: "Ayuda", icon: CircleHelp },
 ];
 
 export function PublicHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
-      <div className="container-page flex min-h-16 items-center justify-between gap-4">
-        <Link className="flex items-center gap-2 font-bold text-ink" href="/">
-          <span className="grid size-9 place-items-center rounded-md bg-institution text-white">
-            <FileText aria-hidden="true" className="size-5" />
-          </span>
-          PPS Digital
+    <header className="sticky top-0 z-40 bg-white">
+      <div className="container-page flex min-h-[78px] items-center justify-between gap-4">
+        <Link href="/" aria-label="Inicio PPS Digital">
+          <UtnLogo />
         </Link>
-        <nav aria-label="Navegación pública" className="hidden items-center gap-1 md:flex">
-          {publicLinks.map((link) => (
-            <Link className="button-ghost" href={link.href} key={link.href}>
+        <div className="flex items-center gap-4 text-sm font-semibold">
+          <Link className="hidden text-ink hover:text-institution sm:inline-flex" href="/login">
+            Iniciar sesion
+          </Link>
+          <Link className="button-primary min-h-12 px-6" href="/login">
+            <LogIn aria-hidden="true" className="size-4 sm:hidden" />
+            Crear cuenta
+          </Link>
+        </div>
+      </div>
+      <div className="utn-ribbon">
+        <nav
+          aria-label="Navegacion publica"
+          className="container-page flex min-h-[60px] items-center gap-5 overflow-x-auto"
+        >
+          {publicLinks.map((link, index) => (
+            <Link
+              className={
+                index === 0
+                  ? "inline-flex min-w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-ink"
+                  : "inline-flex min-w-fit items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold text-white"
+              }
+              href={link.href}
+              key={link.href}
+            >
+              <link.icon aria-hidden={true} className="size-4" />
               {link.label}
             </Link>
           ))}
         </nav>
-        <Link className="button-primary" href="/login">
-          <LogIn aria-hidden="true" className="size-4" />
-          Portal
-        </Link>
       </div>
     </header>
   );
@@ -40,8 +58,8 @@ export function PublicFooter() {
         <div>
           <p className="font-semibold text-ink">PPS Digital</p>
           <p>
-            Maqueta funcional para demostrar un expediente académico digital,
-            asincrónico y trazable.
+            Maqueta funcional para demostrar un expediente academico digital,
+            asincronico y trazable.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -49,7 +67,7 @@ export function PublicFooter() {
             Demo estudiante
           </Link>
           <Link className="hover:text-institution" href="/coordinacion">
-            Coordinación
+            Coordinacion
           </Link>
           <Link className="hover:text-institution" href="/supervisor">
             Supervisor

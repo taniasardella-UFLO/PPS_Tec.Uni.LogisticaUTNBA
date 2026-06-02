@@ -1,72 +1,91 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import { FileCheck2, PenLine, ShieldCheck } from "lucide-react";
 import { PublicPage } from "@/components/public-layout";
-import { benefits, processSteps, rolePanels } from "@/lib/mock-data";
+import { rolePanels } from "@/lib/mock-data";
+
+const featureCards = [
+  { title: "Documentacion guiada", icon: FileCheck2 },
+  { title: "Firma electronica trazable", icon: PenLine },
+  { title: "Revision academica ordenada", icon: ShieldCheck },
+];
 
 export default function HomePage() {
   return (
     <PublicPage>
-      <section className="border-b border-line bg-white">
-        <div className="container-page grid min-h-[calc(100vh-4rem)] content-center gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
-          <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1 text-sm font-semibold text-institution">
-              <ShieldCheck aria-hidden="true" className="size-4" />
-              Expediente académico digital
-            </div>
-            <h1 className="text-4xl font-bold leading-tight text-ink sm:text-5xl lg:text-6xl">
-              Digitalizá la acreditación de tu PPS Laboral
+      <section className="bg-white">
+        <div className="container-page grid min-h-[calc(100vh-8.7rem)] items-center gap-12 py-14 lg:grid-cols-[0.92fr_0.78fr] lg:py-16">
+          <div className="mx-auto max-w-[590px] lg:mx-0">
+            <h1 className="text-[2.7rem] font-black leading-[0.98] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[4.1rem]">
+              El puente entre tu PPS Laboral y la acreditacion digital
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-              Un portal para cargar documentación, validar requisitos, firmar electrónicamente y
-              seguir cada etapa del proceso de acreditación en un único expediente digital.
+            <p className="mt-8 max-w-[560px] text-xl leading-9 text-muted">
+              PPS Digital conecta estudiantes, supervisores y equipos academicos en una plataforma
+              clara para cargar documentacion, firmar y seguir cada etapa del expediente.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link className="button-primary" href="/dashboard">
-                Iniciar trámite
-                <ArrowRight aria-hidden="true" className="size-4" />
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link className="button-primary min-h-[62px] px-8 text-base" href="/dashboard">
+                Quiero iniciar mi tramite
               </Link>
-              <Link className="button-secondary" href="/como-funciona">
-                Ver demo del proceso
+              <Link className="button-secondary min-h-[62px] px-8 text-base" href="/como-funciona">
+                Ver proceso
               </Link>
+            </div>
+            <div className="mt-16 flex flex-wrap items-center gap-5">
+              <div className="flex -space-x-3">
+                {["ML", "CM", "LF", "CP"].map((initials, index) => (
+                  <span
+                    className="grid size-11 place-items-center rounded-full border-2 border-white text-sm font-black text-white shadow-sm"
+                    key={initials}
+                    style={{
+                      backgroundColor: ["#b0073b", "#008f76", "#2563eb", "#111827"][index],
+                    }}
+                  >
+                    {initials}
+                  </span>
+                ))}
+              </div>
+              <span className="h-10 w-px bg-line" aria-hidden="true" />
+              <p className="text-xl text-muted">
+                <strong className="font-black text-ink">+200</strong> horas trazables
+              </p>
             </div>
           </div>
 
-          <div className="panel p-5">
-            <div className="flex items-center gap-3 border-b border-line pb-4">
-              <span className="grid size-12 place-items-center rounded-md bg-institution text-white">
-                <FileText aria-hidden="true" className="size-6" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-muted">Expediente PPS-2026-0142</p>
-                <p className="font-bold text-ink">Martina López · Modalidad Laboral</p>
-              </div>
+          <div className="relative mx-auto w-full max-w-[508px]">
+            <div className="overflow-hidden rounded-[22px] bg-[#eef0f2] shadow-soft">
+              <Image
+                alt="Estudiante usando una plataforma academica digital"
+                className="aspect-[4/5] h-auto w-full object-cover"
+                height={1024}
+                priority
+                src="/images/utn-hero.png"
+                width={820}
+              />
             </div>
-            <ol className="mt-5 space-y-4">
-              {processSteps.slice(0, 5).map((step) => (
-                <li className="flex gap-3" key={step.title}>
-                  <span className="mt-0.5 grid size-7 place-items-center rounded-full bg-[#edf8f1] text-ok">
-                    <CheckCircle2 aria-hidden="true" className="size-4" />
-                  </span>
-                  <div>
-                    <p className="font-semibold text-ink">{step.title}</p>
-                    <p className="text-sm leading-5 text-muted">{step.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </div>
         </div>
       </section>
 
+      <section className="utn-ribbon overflow-hidden">
+        <div className="container-page py-10 text-white">
+          <h2 className="text-center text-3xl font-bold sm:text-4xl">
+            Encuentra cada paso del tramite en un unico expediente
+          </h2>
+        </div>
+      </section>
+
       <section className="container-page py-12">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => (
-            <article className="panel p-5" key={benefit}>
-              <CheckCircle2 aria-hidden="true" className="size-5 text-ok" />
-              <h2 className="mt-4 font-bold text-ink">{benefit}</h2>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                Cada acción queda asociada al expediente, al rol responsable y al estado del
-                trámite.
+        <div className="grid gap-5 md:grid-cols-3">
+          {featureCards.map((item) => (
+            <article className="panel p-6" key={item.title}>
+              <span className="grid size-12 place-items-center rounded-[8px] bg-[#f7e6ec] text-institution">
+                <item.icon aria-hidden={true} className="size-6" />
+              </span>
+              <h2 className="mt-5 text-xl font-bold text-ink">{item.title}</h2>
+              <p className="mt-3 text-sm leading-6 text-muted">
+                Cada accion queda asociada al rol responsable, al documento, al estado del tramite
+                y al historial de auditoria.
               </p>
             </article>
           ))}
@@ -78,13 +97,13 @@ export default function HomePage() {
           <div className="mb-8 max-w-3xl">
             <h2 className="text-3xl font-bold text-ink">Roles participantes</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              La maqueta muestra qué hace cada actor del circuito sin instancias sincrónicas
+              La maqueta muestra que hace cada actor del circuito sin instancias sincronicas
               obligatorias.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {rolePanels.map((role) => (
-              <article className="rounded-lg border border-line bg-paper p-5" key={role.title}>
+              <article className="rounded-[8px] border border-line bg-paper p-5" key={role.title}>
                 <role.icon aria-hidden={true} className="size-6 text-institution" />
                 <h3 className="mt-4 font-bold text-ink">{role.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{role.description}</p>

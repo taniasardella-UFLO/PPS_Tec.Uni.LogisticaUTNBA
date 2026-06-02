@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --background: #f8faf9;
-  --foreground: #17202a;
+  --background: #f7f8fa;
+  --foreground: #111827;
 }
 
 * {
@@ -39,7 +39,7 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid #bf6f2e;
+  outline: 3px solid #d11245;
   outline-offset: 3px;
 }
 
@@ -56,23 +56,23 @@ textarea {
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1216px] px-4 sm:px-6 lg:px-8;
   }
 
   .panel {
-    @apply rounded-lg border border-line bg-white shadow-soft;
+    @apply rounded-[8px] border border-line bg-white shadow-soft;
   }
 
   .button-primary {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-institution px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#0f4f57];
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border-2 border-institution bg-[#05070c] px-6 py-2 text-sm font-bold text-white transition hover:bg-institution;
   }
 
   .button-secondary {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-line bg-white px-4 py-2 text-sm font-semibold text-ink transition hover:border-institution hover:text-institution;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line bg-white px-6 py-2 text-sm font-semibold text-ink transition hover:border-institution hover:text-institution;
   }
 
   .button-ghost {
-    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-muted transition hover:bg-[#eef4f5] hover:text-ink;
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-muted transition hover:bg-white hover:text-ink;
   }
 
   .input {
@@ -81,5 +81,11 @@ textarea {
 
   .label {
     @apply text-sm font-semibold text-ink;
+  }
+
+  .utn-ribbon {
+    background:
+      radial-gradient(circle at 86% 45%, rgba(255, 255, 255, 0.55), transparent 18rem),
+      linear-gradient(90deg, #b0073b 0%, #c20d3d 58%, #f4c9d4 100%);
   }
 }
