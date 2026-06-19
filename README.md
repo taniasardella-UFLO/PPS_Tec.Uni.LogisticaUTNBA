@@ -27,13 +27,10 @@ npm run build
 - Firma electronica simulada con trazabilidad.
 - Expediente digital con timeline y auditoria.
 - Paneles para Coordinacion, Supervisor y Docente Evaluador.
-- Asistente SPECT para orientar especificaciones del modulo PPS integrado a una plataforma universitaria.
+- Asistente PPS para orientar especificaciones del modulo PPS integrado a una plataforma universitaria.
 
-## Asistente SPECT
+## Asistente PPS
 
-El agente esta documentado en `.agents/pps-spect-agent.md` y visible en:
+- El asistente esta documentado en la guia del proyecto y visible en la web publica y en el dashboard.
 
-- `/agente-spect`
-- `/dashboard/agente-spect`
-
-SPECT organiza cada cambio en Situacion, Proceso, Evidencia, Criterios y Trazabilidad para dirigir mejoras hacia la web publicada en Vercel.
+El asistente organiza cada cambio en Situacion, Proceso, Evidencia, Criterios y Trazabilidad para dirigir mejoras hacia la web publicada en Vercel.

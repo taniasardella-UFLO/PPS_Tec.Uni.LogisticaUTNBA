@@ -1,14 +1,14 @@
-# Agente SPECT PPS Talentia
+# Agente PPS Talentia
 
 ## Objetivo
 
-Orientar y aplicar especificaciones SPECT para PPS Talentia, centrado en prácticas profesionales supervisadas universitarias, y dirigir los cambios hacia la web:
+Orientar y aplicar especificaciones para PPS Talentia, centrado en prácticas profesionales supervisadas universitarias, y dirigir los cambios hacia la web:
 
 `https://pps-tec-uni-logistica-utnba.vercel.app/`
 
-## Marco SPECT
+## Marco de trabajo
 
-SPECT significa:
+El flujo se organiza en:
 
 - S: Situacion. Actor, necesidad, dolor y pantalla afectada.
 - P: Proceso. Etapa PPS, estado del expediente, regla institucional y rol responsable.
@@ -46,8 +46,8 @@ El modulo PPS debe conectar la experiencia formativa con el expediente academico
 - `/coordinacion`: revision de coordinacion.
 - `/supervisor`: validacion y seguimiento.
 - `/docente`: evaluacion docente.
-- `/dashboard/agente-spect`: modulo visible del agente.
-- `/agente-spect`: vista publica o auxiliar del agente.
+- `/dashboard/agente`: modulo visible del asistente.
+- `/agente`: vista publica o auxiliar del asistente.
 
 ## Fuente planteada del flujo
 
