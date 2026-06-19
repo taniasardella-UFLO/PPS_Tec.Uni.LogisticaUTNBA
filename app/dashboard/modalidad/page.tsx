@@ -63,7 +63,7 @@ const modalities = [
     description:
       "La universidad asigna horas de PPS a proyectos reales, simulados, internos, externos, de consultoría, innovación, investigación aplicada, laboratorios o desafíos institucionales.",
     icon: LayoutGrid,
-    status: { label: "Próximamente", tone: "neutral" as const },
+    status: { label: "Próximamente", tone: "muted" as const },
     action: { label: "Ver próxima etapa", variant: "secondary" as const },
     flow: [
       "Seleccionar proyecto asignado",
@@ -126,7 +126,7 @@ export default function ModalidadPage() {
               </div>
 
               <div className="mt-5 flex flex-wrap gap-3">
-                {modality.action.href ? (
+                {"href" in modality.action ? (
                   <Link
                     className={modality.action.variant === "primary" ? "button-primary" : "button-secondary"}
                     href={modality.action.href}
