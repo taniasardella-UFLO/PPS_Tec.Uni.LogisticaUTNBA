@@ -11,8 +11,8 @@ export default function ComoFuncionaPage() {
         <div className="mb-8 max-w-3xl">
           <h1 className="text-4xl font-bold text-ink">Cómo funciona</h1>
           <p className="mt-3 text-lg leading-8 text-muted">
-            El proceso reemplaza trámites manuales por un circuito guiado de formularios,
-            documentación, firma electrónica con trazabilidad, observaciones y aprobación.
+            El proceso recorre solicitud, validaciones académicas y administrativas, asignación de
+            actores, plan de práctica, seguimiento de horas, informe final y constancia.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">

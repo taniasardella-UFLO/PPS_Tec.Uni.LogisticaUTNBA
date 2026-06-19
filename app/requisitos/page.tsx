@@ -4,10 +4,10 @@ import { PublicPage } from "@/components/public-layout";
 import { requirements } from "@/lib/mock-data";
 
 const faqs = [
-  ["¿Cuántas horas requiere la PPS Laboral?", "El mínimo declarado para el circuito es de 200 horas."],
-  ["¿Quién firma el PPS0?", "El estudiante y el Supervisor de Campo deben firmar antes de la revisión académica."],
-  ["¿Qué pasa si Coordinación observa un documento?", "El expediente vuelve al estudiante con una observación registrada y trazable."],
-  ["¿La firma de la maqueta tiene validez legal?", "La maqueta simula firma electrónica. La validez final depende de normativa y proveedor adoptado."],
+  ["¿Las horas están fijas?", "No. Cada carrera, plan de estudios o reglamento interno define su propia carga horaria."],
+  ["¿Quién firma la solicitud inicial?", "La firma depende de la configuración institucional y de los actores asignados al caso."],
+  ["¿Qué pasa si una revisión observa un documento?", "El expediente vuelve al actor responsable con una observación registrada y trazable."],
+  ["¿La firma de la maqueta tiene validez legal?", "La maqueta simula firma electrónica. La validez final depende de la normativa y del proveedor adoptado."],
 ];
 
 export default function RequisitosPage() {
@@ -15,10 +15,10 @@ export default function RequisitosPage() {
     <PublicPage>
       <section className="container-page py-12">
         <div className="mb-8 max-w-3xl">
-          <h1 className="text-4xl font-bold text-ink">Requisitos PPS Laboral</h1>
+          <h1 className="text-4xl font-bold text-ink">Requisitos PPS Talentia</h1>
           <p className="mt-3 text-lg leading-8 text-muted">
-            Documentación inicial, datos de empresa, supervisor, formularios PPS0, PPS1 y entrega
-            final en un expediente digital.
+            La documentación obligatoria se parametriza por institución, carrera, plan de estudios y
+            reglamento interno. La plataforma sólo administra lo que cada unidad académica configure.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-[1fr_0.8fr]">
@@ -50,7 +50,7 @@ export default function RequisitosPage() {
           </section>
         </div>
         <Link className="button-primary mt-8" href="/login">
-          Iniciar trámite PPS
+          Iniciar solicitud
           <ArrowRight aria-hidden="true" className="size-4" />
         </Link>
       </section>

@@ -225,24 +225,23 @@ export function ObservationThread() {
 }
 
 export function HoursCounter() {
-  const percentage = Math.min(100, Math.round((caseSummary.totalDeclaredHours / caseSummary.totalRequiredHours) * 100));
-
   return (
     <section className="panel p-5">
       <div className="flex items-start justify-between gap-4">
         <div>
           <h2 className="text-lg font-bold text-ink">Cómputo de horas</h2>
-          <p className="text-sm text-muted">Horas previstas para la modalidad laboral.</p>
+          <p className="text-sm text-muted">Horas declaradas y política de carga configurada por carrera.</p>
         </div>
-        <StatusBadge label="Cumple mínimo" tone="ok" />
+        <StatusBadge label="Política configurable" tone="info" />
       </div>
-      <div className="mt-5">
-        <div className="mb-2 flex items-end justify-between gap-4">
-          <p className="text-3xl font-bold text-ink">{caseSummary.totalDeclaredHours} h</p>
-          <p className="text-sm font-semibold text-muted">Mínimo: {caseSummary.totalRequiredHours} h</p>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-md border border-line bg-paper p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">Horas declaradas</p>
+          <p className="mt-1 text-3xl font-bold text-ink">{caseSummary.totalDeclaredHours} h</p>
         </div>
-        <div className="h-3 overflow-hidden rounded-full bg-[#e6edf0]">
-          <div className="h-full rounded-full bg-institution" style={{ width: `${percentage}%` }} />
+        <div className="rounded-md border border-line bg-paper p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">Regla de horas</p>
+          <p className="mt-1 text-sm font-semibold leading-6 text-ink">{caseSummary.hoursPolicy}</p>
         </div>
       </div>
     </section>

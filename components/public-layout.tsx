@@ -1,28 +1,29 @@
 import Link from "next/link";
-import { BriefcaseBusiness, Building2, CircleHelp, Home, LogIn } from "lucide-react";
+import { Bot, BriefcaseBusiness, Building2, CircleHelp, Home, LogIn } from "lucide-react";
 import { UtnLogo } from "@/components/utn-brand";
 
 const publicLinks = [
   { href: "/", label: "Inicio", icon: Home },
   { href: "/como-funciona", label: "Proceso", icon: BriefcaseBusiness },
   { href: "/requisitos", label: "Requisitos", icon: Building2 },
-  { href: "/login", label: "Ayuda", icon: CircleHelp },
+  { href: "/dashboard", label: "Portal", icon: Bot },
+  { href: "/login", label: "Acceso", icon: CircleHelp },
 ];
 
 export function PublicHeader() {
   return (
     <header className="sticky top-0 z-40 bg-white">
       <div className="container-page flex min-h-[78px] items-center justify-between gap-4">
-        <Link href="/" aria-label="Inicio PPS Digital">
+        <Link href="/" aria-label="Inicio PPS Talentia">
           <UtnLogo />
         </Link>
         <div className="flex items-center gap-4 text-sm font-semibold">
           <Link className="hidden text-ink hover:text-institution sm:inline-flex" href="/login">
-            Iniciar sesion
+            Iniciar sesión
           </Link>
           <Link className="button-primary min-h-12 px-6" href="/login">
             <LogIn aria-hidden="true" className="size-4 sm:hidden" />
-            Crear cuenta
+            Ingresar
           </Link>
         </div>
       </div>
@@ -56,15 +57,15 @@ export function PublicFooter() {
     <footer className="border-t border-line bg-white">
       <div className="container-page grid gap-6 py-8 text-sm text-muted md:grid-cols-[1fr_auto]">
         <div>
-          <p className="font-semibold text-ink">PPS Digital</p>
+          <p className="font-semibold text-ink">PPS Talentia</p>
           <p>
-            Maqueta funcional para demostrar un expediente academico digital,
-            asincronico y trazable.
+            Sistema para gestionar PPS universitarias con configuración por institución,
+            trazabilidad completa y flujo desde la solicitud hasta la constancia.
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link className="hover:text-institution" href="/dashboard">
-            Demo estudiante
+            Portal demo
           </Link>
           <Link className="hover:text-institution" href="/coordinacion">
             Coordinacion

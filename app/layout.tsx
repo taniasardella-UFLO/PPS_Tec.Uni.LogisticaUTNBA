@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PPS Digital",
+  title: "PPS Talentia",
   description:
-    "Portal académico para gestionar la acreditación de PPS Laboral con expediente digital y firma electrónica con trazabilidad.",
+    "Sistema web para gestionar PPS universitarias con configuración por institución, trazabilidad completa y flujo de constancia final.",
 };
 
 export default function RootLayout({

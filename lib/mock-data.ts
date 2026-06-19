@@ -1,6 +1,7 @@
 import {
   AlertCircle,
   BadgeCheck,
+  Bot,
   BookOpenCheck,
   BriefcaseBusiness,
   CalendarClock,
@@ -18,150 +19,142 @@ import {
 } from "lucide-react";
 
 export type CaseStatus =
-  | "draft_started"
-  | "modality_selected"
-  | "pps0_in_progress"
-  | "waiting_student_signature"
-  | "waiting_supervisor_signature"
-  | "ready_for_coordination_review"
-  | "coordination_review"
-  | "changes_requested"
-  | "initial_approved"
-  | "pps1_enabled"
-  | "pps1_submitted"
-  | "pps1_under_review"
-  | "pps1_approved"
-  | "final_enabled"
-  | "final_submitted"
-  | "final_under_review"
-  | "approved"
-  | "rejected"
-  | "archived";
+  | "BORRADOR"
+  | "SOLICITUD_ENVIADA"
+  | "EN_REVISION_ACADEMICA"
+  | "OBSERVADA"
+  | "EN_REVISION_ADMINISTRATIVA_LEGAL"
+  | "APROBADA_PARA_INICIO"
+  | "EN_CURSO"
+  | "PAUSADA"
+  | "CON_INCIDENTE"
+  | "PENDIENTE_INFORME_FINAL"
+  | "EN_EVALUACION_FINAL"
+  | "APROBADA"
+  | "RECHAZADA"
+  | "ANULADA"
+  | "FINALIZADA_CON_CONSTANCIA";
 
 export const statusLabels: Record<CaseStatus, string> = {
-  draft_started: "Borrador iniciado",
-  modality_selected: "Modalidad seleccionada",
-  pps0_in_progress: "PPS0 en carga",
-  waiting_student_signature: "Pendiente de firma del estudiante",
-  waiting_supervisor_signature: "Pendiente de firma del supervisor",
-  ready_for_coordination_review: "Listo para revisión de coordinación",
-  coordination_review: "En revisión por coordinación",
-  changes_requested: "Observado, requiere corrección",
-  initial_approved: "Documentación inicial aprobada",
-  pps1_enabled: "Primera entrega habilitada",
-  pps1_submitted: "PPS1 entregado",
-  pps1_under_review: "PPS1 en revisión",
-  pps1_approved: "PPS1 aprobado",
-  final_enabled: "Entrega final habilitada",
-  final_submitted: "Entrega final presentada",
-  final_under_review: "Cierre en evaluación",
-  approved: "Acreditación PPS aprobada",
-  rejected: "No aprobado",
-  archived: "Archivado",
+  BORRADOR: "Borrador",
+  SOLICITUD_ENVIADA: "Solicitud enviada",
+  EN_REVISION_ACADEMICA: "En revisión académica",
+  OBSERVADA: "Observada",
+  EN_REVISION_ADMINISTRATIVA_LEGAL: "En revisión administrativa/legal",
+  APROBADA_PARA_INICIO: "Aprobada para inicio",
+  EN_CURSO: "En curso",
+  PAUSADA: "Pausada",
+  CON_INCIDENTE: "Con incidente",
+  PENDIENTE_INFORME_FINAL: "Pendiente de informe final",
+  EN_EVALUACION_FINAL: "En evaluación final",
+  APROBADA: "Aprobada",
+  RECHAZADA: "Rechazada",
+  ANULADA: "Anulada",
+  FINALIZADA_CON_CONSTANCIA: "Finalizada con constancia",
 };
 
 export const people = {
   student: {
     name: "Martina López",
     role: "Estudiante",
-    carrera: "Ingeniería Industrial",
+    carrera: "Tecnicatura Universitaria en Logística",
     legajo: "175432",
-    email: "martina.lopez@alumnos.frba.utn.edu.ar",
+    email: "martina.lopez@alumnos.utn.edu.ar",
     phone: "+54 11 4020-1848",
   },
   supervisor: {
     name: "Carlos Méndez",
-    role: "Supervisor de Campo",
+    role: "Referente externo",
     position: "Jefe de Operaciones",
-    email: "carlos.mendez@logisticasur.com",
+    email: "carlos.mendez@organizacion-demo.com",
     phone: "+54 11 4555-0900",
   },
   teacher: {
     name: "Ing. Laura Fernández",
-    role: "Docente Evaluador",
-    email: "laura.fernandez@frba.utn.edu.ar",
+    role: "Tutor académico",
+    email: "laura.fernandez@utn.edu.ar",
   },
   coordination: {
-    name: "Coordinación PPS Logística",
+    name: "Coordinación PPS Talentia",
     role: "Coordinación PPS",
-    email: "pps.logistica@frba.utn.edu.ar",
+    email: "pps.talentia@utn.edu.ar",
   },
 };
 
 export const organization = {
-  name: "Logística Sur S.A.",
+  name: "Organización Demo S.A.",
   cuit: "30-71621984-7",
   area: "Operaciones",
   address: "Av. del Trabajo 1420, Buenos Aires",
-  studentPosition: "Analista de procesos logísticos",
+  studentPosition: "Asistente técnico en procesos",
 };
 
 export const caseSummary = {
   id: "PPS-2026-0142",
-  modality: "Modalidad Laboral",
-  status: "coordination_review" as CaseStatus,
-  totalRequiredHours: 200,
+  modality: "Tecnicatura Universitaria",
+  status: "EN_REVISION_ACADEMICA" as CaseStatus,
   totalDeclaredHours: 220,
+  hoursPolicy: "Definidas por carrera, plan de estudios y reglamento interno",
   createdAt: "2026-05-18",
   updatedAt: "2026-06-01",
   approvedAt: null,
   project: {
-    topic: "Optimización del proceso de preparación de pedidos",
+    topic: "Aplicación técnica en un entorno profesional real",
     objective:
-      "Relevar, analizar y proponer mejoras en el flujo operativo de picking y despacho.",
+      "Registrar una PPS configurable para carrera, institución y reglamento, con trazabilidad completa desde la solicitud hasta la constancia final.",
     expectedHours: 220,
   },
 };
 
 export const benefits = [
-  "Checklist guiado de documentación",
-  "Firma electrónica con trazabilidad",
-  "Seguimiento de estados en tiempo real",
+  "Configuración flexible por institución y carrera",
+  "Trazabilidad académica, administrativa y documental",
+  "Seguimiento del ciclo completo de la PPS",
   "Observaciones y correcciones centralizadas",
-  "Registro de horas y avances",
-  "Expediente final descargable",
+  "Registro de horas, actividades y evidencias",
+  "Constancia final descargable",
 ];
 
 export const processSteps = [
   {
-    title: "Inicio del trámite digital",
+    title: "Solicitud inicial",
     description:
-      "El estudiante revisa requisitos, selecciona modalidad e inicia un expediente PPS.",
+      "El estudiante crea un borrador, carga datos base y presenta la solicitud según la configuración institucional.",
     status: "Completo",
     icon: FileText,
   },
   {
-    title: "Carga PPS0",
+    title: "Validación académica y legal",
     description:
-      "Datos personales, organización, supervisor, proyecto, cronograma y constancia laboral.",
+      "Coordinación y el área administrativa revisan requisitos, convenios y documentación obligatoria.",
     status: "Completo",
     icon: ClipboardCheck,
   },
   {
-    title: "Firma electrónica inicial",
+    title: "Asignación de tutor y referente",
     description:
-      "Estudiante y Supervisor de Campo firman con registro de consentimiento, fecha, hash e historial.",
+      "Se vinculan el tutor académico y el referente externo para coordinar el plan de práctica.",
     status: "En curso",
     icon: PenLine,
   },
   {
-    title: "Revisión académica",
+    title: "Plan de práctica",
     description:
-      "Coordinación valida documentación, puede observar o derivar a evaluación docente.",
+      "El estudiante presenta objetivos, tareas, cronograma y documentación exigida por la institución.",
     status: "Pendiente",
     icon: ShieldCheck,
   },
   {
-    title: "PPS1 y seguimiento",
+    title: "Seguimiento de horas",
     description:
-      "El estudiante entrega avances, horas y evidencias; supervisor y docente revisan.",
+      "Se registran horas, actividades e hitos con validación de los actores responsables.",
     status: "Pendiente",
     icon: CalendarClock,
   },
   {
-    title: "Cierre y constancia",
+    title: "Informe final y cierre",
     description:
-      "Entrega final, firmas completas, aprobación formal y expediente descargable.",
+      "Se evalúa el informe final, se cierra el proceso y se emite la constancia correspondiente.",
     status: "Pendiente",
     icon: BadgeCheck,
   },
@@ -169,42 +162,42 @@ export const processSteps = [
 
 export const documents = [
   {
-    title: "Formulario PPS0",
-    type: "PPS0",
+    title: "Solicitud inicial",
+    type: "Formulario",
     status: "Completo",
     owner: people.student.name,
     version: "v1.2",
   },
   {
-    title: "Constancia laboral",
+    title: "Convenio o autorización",
     type: "Adjunto",
     status: "Cargado",
     owner: organization.name,
     version: "v1.0",
   },
   {
-    title: "Desarrollo del proyecto",
-    type: "Proyecto",
+    title: "Plan de práctica",
+    type: "Plan",
     status: "Completo",
     owner: people.student.name,
     version: "v1.1",
   },
   {
-    title: "Cronograma",
+    title: "Cronograma de actividades",
     type: "Cronograma",
-    status: "Validado: 220 horas",
+    status: "Validado",
     owner: people.student.name,
     version: "v1.0",
   },
   {
-    title: "PPS1 Avance",
-    type: "PPS1",
+    title: "Informe parcial",
+    type: "Seguimiento",
     status: "Programado",
     owner: people.teacher.name,
     version: "Pendiente",
   },
   {
-    title: "PPS1 Final",
+    title: "Informe final",
     type: "Cierre",
     status: "No habilitado",
     owner: people.coordination.name,
@@ -219,39 +212,39 @@ export const checklist = [
     help: "Legajo, carrera, DNI y datos de contacto validados.",
   },
   {
-    label: "Datos laborales",
+    label: "Datos de la práctica",
     status: "Completo",
-    help: "Cargo, área, antigüedad y funciones cargadas.",
+    help: "Objetivos, tareas y condiciones de realización cargadas.",
   },
   {
-    label: "Organización",
+    label: "Organización receptora",
     status: "Completo",
     help: "CUIT, domicilio y contacto institucional.",
   },
   {
-    label: "Supervisor de Campo",
+    label: "Referente externo",
     status: "Completo",
     help: "Nombre, cargo, email y teléfono verificados.",
   },
   {
-    label: "Desarrollo del proyecto",
+    label: "Plan de práctica",
     status: "Completo",
-    help: "Resumen dentro del límite sugerido de dos carillas.",
+    help: "Objetivos, cronograma y alcance definidos.",
   },
   {
     label: "Cronograma",
     status: "Validado",
-    help: "El plan alcanza 220 horas declaradas.",
+    help: "La carga horaria se toma desde la configuración de carrera.",
   },
   {
-    label: "Constancia laboral",
+    label: "Documentación obligatoria",
     status: "Cargado",
     help: "Archivo PDF cargado y pendiente de revisión institucional.",
   },
   {
     label: "Firmas iniciales",
     status: "Pendiente",
-    help: "Falta la firma del Supervisor de Campo.",
+    help: "Falta la firma del referente externo.",
   },
 ];
 
@@ -260,7 +253,7 @@ export const signatures = [
     signer: people.student.name,
     role: people.student.role,
     email: people.student.email,
-    document: "PPS0",
+    document: "Solicitud inicial",
     status: "Firmado",
     signedAt: "2026-06-01 10:14",
     code: "FIR-PPS0-MLO-8B42",
@@ -270,7 +263,7 @@ export const signatures = [
     signer: people.supervisor.name,
     role: people.supervisor.role,
     email: people.supervisor.email,
-    document: "PPS0",
+    document: "Plan de práctica",
     status: "Pendiente",
     signedAt: "A completar",
     code: "Pendiente",
@@ -280,7 +273,7 @@ export const signatures = [
     signer: people.teacher.name,
     role: people.teacher.role,
     email: people.teacher.email,
-    document: "PPS1 Avance",
+    document: "Informe final",
     status: "Programado",
     signedAt: "No habilitado",
     code: "Pendiente",
@@ -292,18 +285,18 @@ export const observations = [
   {
     author: people.coordination.name,
     role: "Coordinación",
-    target: "Cronograma",
+    target: "Plan de práctica",
     message:
-      "Validar que las actividades de mejora queden separadas de las tareas operativas habituales.",
+      "Validar que el plan de práctica distinga actividades técnicas de tareas rutinarias.",
     status: "Abierta",
     createdAt: "2026-06-01 12:32",
   },
   {
     author: people.teacher.name,
-    role: "Docente Evaluador",
-    target: "Proyecto",
+    role: "Tutor académico",
+    target: "Informe final",
     message:
-      "El objetivo está alineado con la carrera. Se sugiere agregar indicador de tiempo de preparación.",
+      "El objetivo está alineado con la carrera. Se sugiere explicitar evidencias y resultados.",
     status: "Informativa",
     createdAt: "2026-05-30 16:05",
   },
@@ -311,32 +304,32 @@ export const observations = [
 
 export const auditEvents = [
   {
-    event: "Expediente creado",
+    event: "Solicitud creada",
     actor: people.student.name,
     role: people.student.role,
     date: "2026-05-18 09:08",
   },
   {
-    event: "Modalidad Laboral seleccionada",
+    event: "Carrera y plan seleccionados",
     actor: people.student.name,
     role: people.student.role,
     date: "2026-05-18 09:12",
   },
   {
-    event: "PPS0 enviado a firma",
+    event: "Documentación enviada a revisión",
     actor: people.student.name,
     role: people.student.role,
     date: "2026-05-29 18:41",
   },
   {
-    event: "Firma electrónica del estudiante registrada",
+    event: "Firma del estudiante registrada",
     actor: people.student.name,
     role: people.student.role,
     date: "2026-06-01 10:14",
   },
   {
-    event: "Validación automática de cronograma aprobada",
-    actor: "Sistema PPS Digital",
+    event: "Validación inicial registrada",
+    actor: "Sistema PPS Talentia",
     role: "Automatización",
     date: "2026-06-01 10:15",
   },
@@ -346,25 +339,25 @@ export const rolePanels = [
   {
     title: "Estudiante",
     description:
-      "Carga documentos, firma formularios, corrige observaciones y consulta el estado del expediente.",
+      "Solicita la PPS, carga documentación, registra horas y responde observaciones.",
     icon: GraduationCap,
   },
   {
-    title: "Supervisor de Campo",
+    title: "Tutor académico",
     description:
-      "Valida vínculo laboral, horas, feedback y firma documentos desde un acceso seguro.",
+      "Revisa el plan, acompaña el seguimiento y evalúa el informe final.",
     icon: BriefcaseBusiness,
   },
   {
-    title: "Docente Evaluador",
+    title: "Referente externo",
     description:
-      "Revisa PPS0, avances y cierre final con rúbrica, comentarios y firma trazable.",
+      "Valida actividades, horas, desempeño y confirma la finalización en la organización.",
     icon: BookOpenCheck,
   },
   {
     title: "Coordinación PPS",
     description:
-      "Audita documentación, solicita correcciones, administra estados y aprueba formalmente.",
+      "Supervisa el circuito, asigna actores y controla estados, documentación y cierre.",
     icon: Users,
   },
 ];
@@ -373,25 +366,25 @@ export const dashboardCards = [
   {
     label: "Estado actual",
     value: statusLabels[caseSummary.status],
-    detail: "Falta la firma del Supervisor de Campo para continuar.",
+    detail: "La revisión académica define el próximo paso del expediente.",
     icon: Clock3,
   },
   {
-    label: "Horas previstas",
-    value: "220 h",
-    detail: "Cumple el mínimo requerido de 200 horas.",
+    label: "Horas declaradas",
+    value: `${caseSummary.totalDeclaredHours} h`,
+    detail: caseSummary.hoursPolicy,
     icon: CheckCircle2,
   },
   {
     label: "Documentos",
-    value: "4/5",
-    detail: "La documentación inicial está cargada.",
+    value: "5/6",
+    detail: "La documentación obligatoria es configurable por institución.",
     icon: FileCheck2,
   },
   {
     label: "Observaciones",
     value: "1 abierta",
-    detail: "Coordinación pidió una precisión en cronograma.",
+    detail: "Coordinación pidió una precisión en el plan de práctica.",
     icon: AlertCircle,
   },
 ];
@@ -409,20 +402,20 @@ export const assignedCases = [
     id: "PPS-2026-0142",
     student: people.student.name,
     status: statusLabels[caseSummary.status],
-    next: "Firma del Supervisor de Campo",
+    next: "Revisión académica",
     hours: 220,
   },
   {
     id: "PPS-2026-0129",
     student: "Agustín Pereyra",
-    status: "PPS1 en revisión",
-    next: "Comentario docente",
+    status: "En evaluación final",
+    next: "Comentario del tutor académico",
     hours: 205,
   },
   {
     id: "PPS-2026-0118",
     student: "Sofía Barrera",
-    status: "Observado, requiere corrección",
+    status: "Observada",
     next: "Corrección del estudiante",
     hours: 198,
   },
@@ -444,22 +437,23 @@ export const schemaEntities = [
 ];
 
 export const validationRules = [
-  "No se puede enviar PPS0 sin datos completos.",
-  "El cronograma debe alcanzar al menos 200 horas.",
-  "No se pasa a revisión académica sin firma del estudiante y del supervisor.",
+  "No se puede enviar una solicitud sin datos completos.",
+  "La cantidad de horas se toma de la configuración de la carrera.",
+  "No se avanza sin validación académica y administrativa cuando corresponda.",
   "Toda corrección queda registrada en auditoría.",
-  "No se aprueba el cierre final sin horas suficientes y firmas completas.",
+  "No se emite la constancia final sin evaluaciones y firmas requeridas.",
 ];
 
 export const requirements = [
-  "Formulario PPS0 con datos personales, académicos, laborales y del Supervisor de Campo.",
-  "Constancia laboral que indique antigüedad y función o desempeño.",
-  "Desarrollo del proyecto con tema, objetivos, actividades, empresa y vínculo con la carrera.",
-  "Cronograma con actividades, fechas estimadas y mínimo 200 horas.",
-  "PPS1 de avance y PPS1 Final con evidencias, feedback y firmas.",
+  "La documentación obligatoria se define por institución, carrera, plan de estudios y reglamento interno.",
+  "La solicitud inicial debe incluir datos académicos, organización receptora y responsable externo.",
+  "El plan de práctica debe indicar objetivos, actividades, cronograma y criterios de validación.",
+  "El seguimiento de horas y actividades se carga según la configuración adoptada por la carrera.",
+  "El informe final y la evaluación pueden ampliarse en futuras versiones para Licenciatura.",
 ];
 
 export const quickActions = [
+  { href: "/dashboard/agente-spect", label: "Abrir asistente", icon: Bot },
   { href: "/dashboard/pps0", label: "Completar PPS0", icon: ClipboardCheck },
   { href: "/dashboard/firmas", label: "Ver firmas", icon: PenLine },
   { href: "/dashboard/expediente", label: "Abrir expediente", icon: History },

@@ -11,7 +11,7 @@ export default function LoginPage() {
             <span className="grid size-12 place-items-center rounded-md bg-institution text-white">
               <LockKeyhole aria-hidden="true" className="size-6" />
             </span>
-            <h1 className="mt-4 text-3xl font-bold text-ink">Login institucional</h1>
+            <h1 className="mt-4 text-3xl font-bold text-ink">Acceso institucional</h1>
             <p className="mt-2 text-sm leading-6 text-muted">
               Acceso mock para recorrer la maqueta. En producción se integraría Supabase Auth,
               email mágico o proveedor institucional.
@@ -20,7 +20,7 @@ export default function LoginPage() {
           <form className="grid gap-4">
             <label className="grid gap-2">
               <span className="label">Email</span>
-              <input className="input" defaultValue="martina.lopez@alumnos.frba.utn.edu.ar" type="email" />
+              <input className="input" defaultValue="martina.lopez@alumnos.utn.edu.ar" type="email" />
             </label>
             <label className="grid gap-2">
               <span className="label">Clave</span>

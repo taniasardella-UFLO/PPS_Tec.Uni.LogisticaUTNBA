@@ -19,7 +19,7 @@ export default function DashboardPage() {
             <ArrowRight aria-hidden="true" className="size-4" />
           </Link>
         }
-        description="Tu expediente está casi completo. Solo falta la firma del Supervisor de Campo para avanzar a revisión de Coordinación."
+        description="Tu expediente está casi completo. Solo falta la revisión del referente externo para avanzar a Coordinación."
         title="Dashboard estudiante"
       />
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -34,7 +34,7 @@ export default function DashboardPage() {
           <section className="panel p-5">
             <h2 className="text-lg font-bold text-ink">Próximo paso recomendado</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              Enviar recordatorio al Supervisor de Campo o abrir la pantalla de firmas para
+              Enviar recordatorio al referente externo o abrir la pantalla de firmas para
               completar la conformidad.
             </p>
             <div className="mt-4 grid gap-2">

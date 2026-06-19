@@ -16,10 +16,10 @@ function inferTone(label: string): Tone {
   if (text.includes("aprob") || text.includes("firmado") || text.includes("validado")) {
     return "ok";
   }
-  if (text.includes("pendiente") || text.includes("revisión") || text.includes("curso")) {
+  if (text.includes("pendiente") || text.includes("revisión") || text.includes("revision") || text.includes("curso")) {
     return "warn";
   }
-  if (text.includes("observ") || text.includes("corrección") || text.includes("rechaz")) {
+  if (text.includes("observ") || text.includes("corrección") || text.includes("rechaz") || text.includes("anul")) {
     return "danger";
   }
   if (text.includes("programado") || text.includes("habilitado")) {

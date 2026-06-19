@@ -1,6 +1,6 @@
-# PPS Digital
+# PPS Talentia
 
-Maqueta navegable para automatizar el proceso de acreditación de PPS en modalidad laboral.
+Sistema navegable para gestionar PPS universitarias con configuracion por institucion, trazabilidad y flujo de constancia final.
 
 ## Stack
 
@@ -19,11 +19,21 @@ npm run build
 
 ## Flujo cubierto
 
-- Landing pública, requisitos y cómo funciona.
+- Landing publica, requisitos y como funciona.
 - Login mock.
 - Dashboard de estudiante.
-- Selección de modalidad.
+- Seleccion de modalidad.
 - Checklist PPS0.
-- Firma electrónica simulada con trazabilidad.
-- Expediente digital con timeline y auditoría.
-- Paneles para Coordinación, Supervisor y Docente Evaluador.
+- Firma electronica simulada con trazabilidad.
+- Expediente digital con timeline y auditoria.
+- Paneles para Coordinacion, Supervisor y Docente Evaluador.
+- Asistente SPECT para orientar especificaciones del modulo PPS integrado a una plataforma universitaria.
+
+## Asistente SPECT
+
+El agente esta documentado en `.agents/pps-spect-agent.md` y visible en:
+
+- `/agente-spect`
+- `/dashboard/agente-spect`
+
+SPECT organiza cada cambio en Situacion, Proceso, Evidencia, Criterios y Trazabilidad para dirigir mejoras hacia la web publicada en Vercel.

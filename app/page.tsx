@@ -5,9 +5,9 @@ import { PublicPage } from "@/components/public-layout";
 import { rolePanels } from "@/lib/mock-data";
 
 const featureCards = [
-  { title: "Documentacion guiada", icon: FileCheck2 },
-  { title: "Firma electronica trazable", icon: PenLine },
-  { title: "Revision academica ordenada", icon: ShieldCheck },
+  { title: "Configuración por institución", icon: FileCheck2 },
+  { title: "Trazabilidad documental", icon: PenLine },
+  { title: "Revisión académica y legal", icon: ShieldCheck },
 ];
 
 export default function HomePage() {
@@ -17,18 +17,19 @@ export default function HomePage() {
         <div className="container-page grid min-h-[calc(100vh-8.7rem)] items-center gap-12 py-14 lg:grid-cols-[0.92fr_0.78fr] lg:py-16">
           <div className="mx-auto max-w-[590px] lg:mx-0">
             <h1 className="text-[2.7rem] font-black leading-[0.98] tracking-[-0.02em] text-ink sm:text-5xl lg:text-[4.1rem]">
-              El puente entre tu PPS Laboral y la acreditacion digital
+              PPS Talentia organiza el ciclo completo de tu PPS universitaria
             </h1>
             <p className="mt-8 max-w-[560px] text-xl leading-9 text-muted">
-              PPS Digital conecta estudiantes, supervisores y equipos academicos en una plataforma
-              clara para cargar documentacion, firmar y seguir cada etapa del expediente.
+              Una plataforma configurable para Tecnicatura Universitaria como MVP inicial y con
+              evolución prevista para Licenciatura, trazando cada solicitud, validación,
+              seguimiento, informe y constancia final.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link className="button-primary min-h-[62px] px-8 text-base" href="/dashboard">
-                Quiero iniciar mi tramite
+                Iniciar solicitud
               </Link>
               <Link className="button-secondary min-h-[62px] px-8 text-base" href="/como-funciona">
-                Ver proceso
+                Ver flujo completo
               </Link>
             </div>
             <div className="mt-16 flex flex-wrap items-center gap-5">
@@ -42,7 +43,7 @@ export default function HomePage() {
                     }}
                   >
                     {initials}
-                  </span>
+                      <strong className="font-black text-ink">MVP</strong> para Tecnicatura Universitaria
                 ))}
               </div>
               <span className="h-10 w-px bg-line" aria-hidden="true" />
@@ -70,7 +71,7 @@ export default function HomePage() {
       <section className="utn-ribbon overflow-hidden">
         <div className="container-page py-10 text-white">
           <h2 className="text-center text-3xl font-bold sm:text-4xl">
-            Encuentra cada paso del tramite en un unico expediente
+            Un solo expediente para solicitud, validación, seguimiento y cierre
           </h2>
         </div>
       </section>
@@ -84,8 +85,8 @@ export default function HomePage() {
               </span>
               <h2 className="mt-5 text-xl font-bold text-ink">{item.title}</h2>
               <p className="mt-3 text-sm leading-6 text-muted">
-                Cada accion queda asociada al rol responsable, al documento, al estado del tramite
-                y al historial de auditoria.
+                Cada acción queda asociada al rol responsable, al documento, al estado del trámite
+                y al historial de auditoría.
               </p>
             </article>
           ))}
@@ -97,8 +98,8 @@ export default function HomePage() {
           <div className="mb-8 max-w-3xl">
             <h2 className="text-3xl font-bold text-ink">Roles participantes</h2>
             <p className="mt-2 text-sm leading-6 text-muted">
-              La maqueta muestra que hace cada actor del circuito sin instancias sincronicas
-              obligatorias.
+              Estudiante, tutor académico, referente externo y coordinación trabajan sobre un flujo
+              auditable y configurable.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">

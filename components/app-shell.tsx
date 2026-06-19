@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   Bell,
+  Bot,
   BookOpenCheck,
   BriefcaseBusiness,
   ChevronDown,
@@ -27,6 +28,7 @@ type NavItem = {
 const navByArea: Record<string, NavItem[]> = {
   estudiante: [
     { href: "/dashboard", label: "Dashboard", icon: Home },
+    { href: "/dashboard/agente-spect", label: "Asistente PPS", icon: Bot },
     { href: "/dashboard/expediente", label: "Mi expediente", icon: History },
     { href: "/dashboard/modalidad", label: "Modalidad", icon: Layers3 },
     { href: "/dashboard/pps0", label: "PPS0", icon: ClipboardCheck },
@@ -36,15 +38,18 @@ const navByArea: Record<string, NavItem[]> = {
   ],
   coordinacion: [
     { href: "/coordinacion", label: "Dashboard", icon: Home },
+    { href: "/dashboard/agente-spect", label: "Asistente PPS", icon: Bot },
     { href: "/coordinacion/expedientes/PPS-2026-0142", label: "Expediente", icon: History },
     { href: "/coordinacion/configuracion", label: "Configuracion", icon: Settings },
   ],
   supervisor: [
     { href: "/supervisor", label: "Mis estudiantes", icon: BriefcaseBusiness },
+    { href: "/dashboard/agente-spect", label: "Asistente PPS", icon: Bot },
     { href: "/supervisor/expedientes/PPS-2026-0142", label: "Revision", icon: PenLine },
   ],
   docente: [
     { href: "/docente", label: "Asignados", icon: BookOpenCheck },
+    { href: "/dashboard/agente-spect", label: "Asistente PPS", icon: Bot },
     { href: "/docente/expedientes/PPS-2026-0142", label: "Evaluacion", icon: ClipboardCheck },
   ],
 };
@@ -69,7 +74,7 @@ export function AppShell({
     <div className="min-h-screen bg-[#f6f7f9]">
       <header className="sticky top-0 z-50 bg-white">
         <div className="flex min-h-[68px] items-center justify-between gap-4 px-5 lg:px-8">
-          <Link href="/" aria-label="Inicio PPS Digital">
+          <Link href="/" aria-label="Inicio PPS Talentia">
             <UtnLogo compact />
           </Link>
           <div className="flex items-center gap-5 text-sm font-semibold text-ink">
