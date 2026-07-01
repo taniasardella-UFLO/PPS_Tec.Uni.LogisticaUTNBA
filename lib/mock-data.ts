@@ -1,7 +1,6 @@
 import {
   AlertCircle,
   BadgeCheck,
-  Bot,
   BookOpenCheck,
   BriefcaseBusiness,
   CalendarClock,
@@ -453,7 +452,6 @@ export const requirements = [
 ];
 
 export const quickActions = [
-  { href: "/dashboard/agente-spect", label: "Abrir asistente", icon: Bot },
   { href: "/dashboard/pps0", label: "Completar PPS0", icon: ClipboardCheck },
   { href: "/dashboard/firmas", label: "Ver firmas", icon: PenLine },
   { href: "/dashboard/expediente", label: "Abrir expediente", icon: History },
