@@ -1,4 +1,4 @@
-export const spectDimensions = [
+export const assistantDimensions = [
   {
     key: "S",
     title: "Situacion",
@@ -56,7 +56,7 @@ export const spectDimensions = [
   },
 ];
 
-export const spectIntegrationFlow = [
+export const assistantIntegrationFlow = [
   {
     stage: "Configuracion institucional",
     title: "Reglas de la PPS",
@@ -79,7 +79,7 @@ export const spectIntegrationFlow = [
   },
 ];
 
-export const spectBacklog = [
+export const assistantBacklog = [
   {
     priority: "1",
     change: "Entrada PPS configurable",
@@ -106,7 +106,7 @@ export const spectBacklog = [
   },
   {
     priority: "4",
-    change: "Panel SPECT de Coordinacion",
+    change: "Panel de Coordinacion",
     target: "Priorizar cambios y observaciones por estado academico.",
     route: "/coordinacion",
     acceptance:
@@ -114,7 +114,7 @@ export const spectBacklog = [
   },
 ];
 
-export const spectAgentChecklist = [
+export const assistantChecklist = [
   "Nombrar actor principal y actor que valida.",
   "Ubicar el paso PPS afectado: solicitud, firmas, seguimiento, cierre o auditoria.",
   "Definir campos y documentos que cambian.",
@@ -123,7 +123,7 @@ export const spectAgentChecklist = [
   "Verificar build y ruta visible en la web publicada.",
 ];
 
-export const spectAgentPrompt = `Actua como Agente SPECT para PPS Talentia.
+export const assistantPrompt = `Actua como Agente para PPS Talentia.
 
 Objetivo: orientar y convertir necesidades del producto PPS Talentia en cambios concretos para la web pps-tec-uni-logistica-utnba.vercel.app, integrada como modulo de una plataforma universitaria.
 

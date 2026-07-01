@@ -34,7 +34,7 @@ export default function HomePage() {
               PPS Talentia organiza el ciclo completo de tu PPS universitaria
             </h1>
             <p className="mt-8 max-w-[580px] text-xl leading-9 text-muted">
-              Una plataforma configurable para Tecnicatura Universitaria como MVP inicial y con
+              Una plataforma configurable para Tecnicatura Universitaria y con
               evolución prevista para Licenciatura, trazando cada solicitud, validación,
               seguimiento, informe y constancia final.
             </p>
@@ -59,9 +59,7 @@ export default function HomePage() {
                 ))}
               </div>
               <span className="h-10 w-px bg-line" aria-hidden="true" />
-              <p className="text-xl text-muted">
-                <strong className="font-black text-ink">MVP</strong> para Tecnicatura Universitaria
-              </p>
+              <p className="text-xl text-muted">Para Tecnicatura Universitaria</p>
             </div>
           </div>
 

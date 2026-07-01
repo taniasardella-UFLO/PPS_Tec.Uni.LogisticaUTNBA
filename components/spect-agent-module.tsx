@@ -12,11 +12,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import {
-  spectAgentChecklist,
-  spectAgentPrompt,
-  spectBacklog,
-  spectDimensions,
-  spectIntegrationFlow,
+  assistantChecklist,
+  assistantPrompt,
+  assistantBacklog,
+  assistantDimensions,
+  assistantIntegrationFlow,
 } from "@/lib/spect-agent";
 
 const dimensionIcons = [FileSearch, Route, ClipboardCheck, BadgeCheck, GitBranch];
@@ -36,13 +36,13 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-bold text-institution">
               <Bot aria-hidden="true" className="size-4" />
-              Asistente SPECT
+              Asistente PPS
             </div>
             <h1 className="max-w-4xl text-4xl font-black leading-tight text-ink sm:text-5xl">
               Orienta cada decision del modulo PPS antes de cambiar la web
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
-              SPECT organiza el producto digital en Situacion, Proceso, Evidencia, Criterios y
+              Organiza el producto digital en Situacion, Proceso, Evidencia, Criterios y
               Trazabilidad para integrar PPS Talentia como modulo de una plataforma universitaria.
             </p>
           </div>
@@ -67,7 +67,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
       ) : null}
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-        {spectDimensions.map((dimension, index) => {
+        {assistantDimensions.map((dimension, index) => {
           const Icon = dimensionIcons[index];
           return (
             <article className="panel p-5" key={dimension.key}>
@@ -110,7 +110,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
             </div>
           </div>
           <div className="space-y-3">
-            {spectIntegrationFlow.map((item) => (
+            {assistantIntegrationFlow.map((item) => (
               <Link
                 className="block rounded-[8px] border border-line bg-paper p-4 transition hover:border-institution"
                 href={item.route}
@@ -128,7 +128,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
 
         <section className="panel overflow-hidden">
           <div className="border-b border-line p-5">
-            <h2 className="text-lg font-bold text-ink">Backlog dirigido por SPECT</h2>
+            <h2 className="text-lg font-bold text-ink">Backlog del asistente</h2>
             <p className="text-sm text-muted">
               Primeras decisiones para que los cambios de producto lleguen a rutas concretas.
             </p>
@@ -144,7 +144,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-line bg-white">
-                {spectBacklog.map((item) => (
+                {assistantBacklog.map((item) => (
                   <tr key={item.change}>
                     <td className="px-5 py-4 font-black text-institution">{item.priority}</td>
                     <td className="px-5 py-4">
@@ -172,7 +172,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
             <h2 className="text-lg font-bold text-ink">Checklist del agente</h2>
           </div>
           <div className="space-y-3">
-            {spectAgentChecklist.map((item) => (
+            {assistantChecklist.map((item) => (
               <div className="flex gap-3 rounded-md border border-line bg-paper p-3" key={item}>
                 <CheckCircle2 aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-[#1f8a4c]" />
                 <p className="text-sm font-semibold leading-6 text-ink">{item}</p>
@@ -187,7 +187,7 @@ export function SpectAgentModule({ embedded = false }: { embedded?: boolean }) {
             <h2 className="text-lg font-bold text-ink">Prompt operativo versionado</h2>
           </div>
           <pre className="max-h-[480px] overflow-auto rounded-lg bg-[#17202a] p-4 text-sm leading-6 text-white">
-            <code>{spectAgentPrompt}</code>
+            <code>{assistantPrompt}</code>
           </pre>
         </section>
       </div>
