@@ -6,7 +6,7 @@ export default function AgenteSpectDashboardPage() {
     <AppShell area="estudiante">
       <PageHeader
         description="Marco operativo para orientar el modulo PPS Talentia, con decisiones trazables y configuracion por institucion."
-        title="Asistente PPS"
+        title="Asistente SPECT"
       />
       <SpectAgentModule embedded />
     </AppShell>
